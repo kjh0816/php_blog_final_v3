@@ -1,0 +1,22 @@
+{
+  "name": "sbs/blog1",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "files": [
+      "src/util.php"
+    ],
+    "psr-4": {
+      "App\\": "src/app"
+    }
+  },
+  "authors": [
+    {
+      "name": "jhs512",
+      "email": "jangka512@gmail.com"
+    }
+  ],
+  "require": {
+    "samdark/sitemap": "^2.2"
+  }
+}
