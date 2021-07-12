@@ -49,6 +49,21 @@ $pageTitle = "게시물 수정, ${id}번 게시물";
       <div class="container mx-auto">
       <input type="hidden" name="id" value="<?=$article['id']?>"> 
       <input type="hidden" name="body"> 
+      <div>
+        <span class="badge badge-primary badge-outline">카테고리 선택</span>
+        <select required name="boardId" class="btn-outline btn-primary font-bold">
+        <?php foreach($boards as $board){?>
+        <?php if($memberId == 1){?>
+        <option value="<?=$board['id']?>"><?=$board['name']?></option>
+        <?php }else{ ?>
+        <?php if($board['id'] != 1){?>
+        <option value="<?=$board['id']?>"><?=$board['name']?></option>
+
+        <?php }}?>
+        <?php }?>
+        </select>
+        
+        </div>
       <div class="mt-4">
           <span class="badge badge-primary badge-outline">번호</span>
           <span><?=$article['id']?></span>

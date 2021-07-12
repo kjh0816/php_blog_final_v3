@@ -41,7 +41,7 @@ $pageTitle = "게시물 작성";
       <form action="doWrite" method="POST" class="mt-10" onsubmit="ArticleDoWrite__submitForm(this); return false;">
         <input type="hidden" name="body">
         <div>
-        <span>카테고리 선택>
+        <span class="badge badge-primary badge-outline">카테고리 선택</span>
         <select required name="boardId" class="btn-outline btn-primary font-bold">
         <?php foreach($boards as $board){?>
         <?php if($memberId == 1){?>
@@ -53,18 +53,18 @@ $pageTitle = "게시물 작성";
         <?php }}?>
         <?php }?>
         </select>
-        </span>
+        
         </div>
         <div class="form-control my-10">
         <label class="label">
-          <span class="label-text font-bold">제목</span>
+          <span class="label-text badge badge-primary badge-outline">제목</span>
         </label> 
         <input type="text" placeholder="제목을 입력해주세요." name="title" class="input input-bordered">
         </div>  
 
 
         <div>
-          <span>내용</span>
+          <span class="badge badge-primary badge-outline">내용</span>
 
           <script type="text/x-template"></script>
           <div class="toast-ui-editor input-body"></div>

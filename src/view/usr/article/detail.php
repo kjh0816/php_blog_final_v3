@@ -35,11 +35,15 @@ $utterancPageIdentifier = "/usr/article/detail?id={$article['id']}";
             ?>
             <div>
               <div class="badge badge-primary badge-outline">번호</div>
-              <a href="<?=$detailUri?>"><?=$article['id']?></a>
+              <?=$article['id']?>
             </div>
             <div class="mt-2">
               <div class="badge badge-primary badge-outline">제목</div>
-              <a href="<?=$detailUri?>"><?=$article['title']?></a>
+              <?=$article['title']?>
+            </div>
+            <div class="mt-2">
+              <div class="badge badge-primary badge-outline">게시판</div>
+              <?=$article['boardName']?>
             </div>
             <div class="mt-2">
               <div class="badge badge-primary badge-outline">작성자</div>

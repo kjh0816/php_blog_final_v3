@@ -29,9 +29,12 @@ class ArticleRepository
         $sql = DB__secSql();
         $sql->add("SELECT A.*");
         $sql->add(", M.nickname AS `nickname`");
+        $sql->add(", B.name AS `boardName`");
         $sql->add("FROM article AS `A`");
         $sql->add("INNER JOIN `member` AS `M`");
         $sql->add("ON A.memberId = M.id");
+        $sql->add("INNER JOIN `board` AS `B`");
+        $sql->add("ON A.boardId = B.id");
         $sql->add("WHERE A.id = ?", $id);
         return DB__getRow($sql);
     }
@@ -53,13 +56,14 @@ class ArticleRepository
       return $id;
     }
 
-    public function modifyArticle(int $id, string $title, string $body)
+    public function modifyArticle(int $id, int $boardId, string $title, string $body)
     {
         $sql = DB__secSql();
         $sql->add("UPDATE article");
         $sql->add("SET updateDate = NOW()");
         $sql->add(", title = ?", $title);
         $sql->add(", `body` = ?", $body);
+        $sql->add(", boardId = ?", $boardId);
         $sql->add("WHERE id = ?", $id);
         $id = DB__update($sql);
     }

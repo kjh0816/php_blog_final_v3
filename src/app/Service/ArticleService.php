@@ -30,9 +30,9 @@ class ArticleService
         return $this->articleRepository()->writeArticle($memberId, $boardId, $title, $body);
     }
 
-    public function modifyArticle(int $id, string $title, string $body)
+    public function modifyArticle(int $id, int $boardId, string $title, string $body)
     {
-        $this->articleRepository()->modifyArticle($id, $title, $body);
+        $this->articleRepository()->modifyArticle($id, $boardId, $title, $body);
     }
 
     public function deleteArticle(int $id)

@@ -23,6 +23,7 @@ class UsrArticleController extends Controller
     public function actionDoModify()
     {
         $id = getIntValueOr($_REQUEST['id'], 0);
+        $boardId = getIntValueOr($_REQUEST['boardId'], 0);
         $title = getStrValueOr($_REQUEST['title'], "");
         $body = getStrValueOr($_REQUEST['body'], "");
 
@@ -50,7 +51,7 @@ class UsrArticleController extends Controller
             jsHistoryBackExit($actorCanModifyRs->getMsg());
         }
 
-        $this->articleService()->modifyArticle($id, $title, $body);
+        $this->articleService()->modifyArticle($id, $boardId, $title, $body);
 
         jsLocationReplaceExit("detail?id=${id}", "${id}번 게시물이 수정되었습니다.");
     }
@@ -236,12 +237,14 @@ class UsrArticleController extends Controller
         if ($article == null) {
             jsHistoryBackExit("${id}번 게시물은 존재하지 않습니다.");
         }
-
+        
         $actorCanModifyRs = $this->articleService()->getActorCanModify($_REQUEST['App__loginedMember'], $article);
 
         if ($actorCanModifyRs->isFail()) {
             jsHistoryBackExit($actorCanModifyRs->getMsg());
         }
+
+        $boards = $this->articleService()->getForPrintBoards();
 
         require_once $this->getViewPath("usr/article/modify");
     }
