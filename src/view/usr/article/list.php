@@ -16,7 +16,7 @@ $pageTitleIcon = '<i class="fas fa-list"></i>';
 </span>
 </div>
 <div class="">
-<span class="mr-4">카테고리: </span>
+<span class="mr-4">카테고리> </span>
 <select class="article-list-choose-board btn-outline btn-primary" name="boardId">
 <option value="0" class="text-pink-500">카테고리 선택</option>
 <?php foreach($boards as $board){?>

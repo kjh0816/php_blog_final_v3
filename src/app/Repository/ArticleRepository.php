@@ -141,7 +141,7 @@ class ArticleRepository
         $sql = DB__secSql();
         $sql->add("SELECT *");
         $sql->add("FROM board AS B");
-        $sql->add("ORDER BY B.id DESC");
+        $sql->add("ORDER BY B.id ASC");
         return DB__getRows($sql);
       }
 

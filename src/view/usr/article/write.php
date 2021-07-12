@@ -38,11 +38,11 @@ $pageTitle = "게시물 작성";
         ArticleDoWrite__submitFormDone = true;
       }
       </script>
-      <form action="doWrite" method="POST" onsubmit="ArticleDoWrite__submitForm(this); return false;">
+      <form action="doWrite" method="POST" class="mt-10" onsubmit="ArticleDoWrite__submitForm(this); return false;">
         <input type="hidden" name="body">
         <div>
-        <span>게시판 선택
-        <select required name="boardId">
+        <span>카테고리 선택>
+        <select required name="boardId" class="btn-outline btn-primary font-bold">
         <?php foreach($boards as $board){?>
         <?php if($memberId == 1){?>
         <option value="<?=$board['id']?>"><?=$board['name']?></option>
@@ -55,10 +55,14 @@ $pageTitle = "게시물 작성";
         </select>
         </span>
         </div>
-        <div>
-          <span>제목</span>
-          <input placeholder="제목을 입력해주세요." type="text" name="title"> 
-        </div>
+        <div class="form-control my-10">
+        <label class="label">
+          <span class="label-text font-bold">제목</span>
+        </label> 
+        <input type="text" placeholder="제목을 입력해주세요." name="title" class="input input-bordered">
+        </div>  
+
+
         <div>
           <span>내용</span>
 
@@ -66,7 +70,8 @@ $pageTitle = "게시물 작성";
           <div class="toast-ui-editor input-body"></div>
         </div>
         <div>
-          <input type="submit" value="글작성">
+        <input type="submit" value="작성 완료"class="btn btn-outline btn-secondary mt-2"></button> 
+          
         </div>
       </form>
     </div>
