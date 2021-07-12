@@ -42,7 +42,7 @@ $utterancPageIdentifier = "/usr/article/detail?id={$article['id']}";
               <?=$article['title']?>
             </div>
             <div class="mt-2">
-              <div class="badge badge-primary badge-outline">게시판</div>
+              <div class="badge badge-primary badge-outline">카테고리</div>
               <?=$article['boardName']?>
             </div>
             <div class="mt-2">
