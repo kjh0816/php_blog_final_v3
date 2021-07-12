@@ -61,7 +61,7 @@ $pageTitle = "게시물 수정, ${id}번 게시물";
           <div class="toast-ui-editor input-body"></div>
         </div>
         <div>
-          <input type="submit" value="글수정">
+        <input type="submit" value="수정 완료"class="btn btn-outline btn-secondary mt-2"></input>
         </div>
       </form>
     </div>

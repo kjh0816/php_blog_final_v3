@@ -70,7 +70,7 @@ $pageTitle = "게시물 작성";
           <div class="toast-ui-editor input-body"></div>
         </div>
         <div>
-        <input type="submit" value="작성 완료"class="btn btn-outline btn-secondary mt-2"></button> 
+        <input type="submit" value="작성 완료"class="btn btn-outline btn-secondary mt-2"></input> 
           
         </div>
       </form>

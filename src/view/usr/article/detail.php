@@ -15,26 +15,50 @@ $utterancPageIdentifier = "/usr/article/detail?id={$article['id']}";
 <?php require_once __DIR__ . "/../head.php"; ?>
 <?php require_once __DIR__ . "/../../part/toastUiSetup.php"; ?>
 
-<section class="section-article-detail">
-  <div class="container mx-auto">
-    <div class="con-pad">
-      <div>
-        <a href="list">리스트</a>
-        <a href="modify?id=<?=$article['id']?>">수정</a>
-        <a onclick="if ( confirm('정말 삭제 하시겠습니까?') == false ) return false;" href="doDelete?id=<?=$article['id']?>">삭제</a>
-      </div>
-      
-      <hr>
 
-      <div>번호 : <?=$article['id']?></div>
-      <div>작성날짜 : <?=$article['regDate']?></div>
-      <div>수정날짜 : <?=$article['updateDate']?></div>
-      <div>제목 : <?=$article['title']?></div>
-      <script type="text/x-template"><?=$body?></script>
-      <div class="toast-ui-viewer"></div>
-    </div>
+<section class="section-article-menu flex mt-2">
+  <div class="container mx-auto flex">
+    <a href="list" class="btn btn-link">리스트</a>
+    <a href="modify?id=<?=$article['id']?>" class="btn btn-link">수정</a>
+    <a class="btn btn-link" onclick="if ( confirm('정말 삭제 하시겠습니까?') == false ) return false;" href="doDelete?id=<?=$article['id']?>">삭제</a>
   </div>
 </section>
+
+<section class="section-article-menu">
+  <div class="container mx-auto ml-4">
+
+  <div class="py-5">
+            <?php
+            $detailUri = "detail?id=${article['id']}";
+            $body = ToastUiEditor__getSafeSource($article['body']);
+            ?>
+            <div>
+              <div class="badge badge-primary badge-outline">번호</div>
+              <a href="<?=$detailUri?>"><?=$article['id']?></a>
+            </div>
+            <div class="mt-2">
+              <div class="badge badge-primary badge-outline">제목</div>
+              <a href="<?=$detailUri?>"><?=$article['title']?></a>
+            </div>
+            <div class="mt-2">
+              <div class="badge badge-primary badge-outline">작성자</div>
+              <?=$article['nickname']?>
+            </div>
+            <div class="mt-2">
+              <div class="badge badge-primary badge-outline">작성날짜</div>
+              <?=$article['regDate']?>
+            </div>
+            <div class="mt-2">
+              <div class="badge badge-primary badge-outline">수정날짜</div>
+              <?=$article['updateDate']?>
+            </div>
+            <div class="mt-2">
+              <script type="text/x-template"><?=$body?></script>
+              <div class="toast-ui-viewer"></div>
+            </div>
+          </div>
+</section>
+
 
 <section class="section-disqus">
   <div class="container mx-auto">

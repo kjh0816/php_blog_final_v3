@@ -27,9 +27,12 @@ class ArticleRepository
     public function getForPrintArticleById(int $id): array|null
     {
         $sql = DB__secSql();
-        $sql->add("SELECT *");
-        $sql->add("FROM article AS A");
-        $sql->add("WHERE id = ?", $id);
+        $sql->add("SELECT A.*");
+        $sql->add(", M.nickname AS `nickname`");
+        $sql->add("FROM article AS `A`");
+        $sql->add("INNER JOIN `member` AS `M`");
+        $sql->add("ON A.memberId = M.id");
+        $sql->add("WHERE A.id = ?", $id);
         return DB__getRow($sql);
     }
 
