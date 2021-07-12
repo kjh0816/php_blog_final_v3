@@ -99,6 +99,7 @@ $loginedMember = $_REQUEST['App__loginedMember'];
     </header>
 
     <main class="flex-grow">
+    <?php if($pageTitleIcon != "false"){?>
         <section class="section-title mt-5 text-2xl font-bold">
             <h1 class="container mx-auto">
                 <div class="con-pad">
@@ -107,3 +108,4 @@ $loginedMember = $_REQUEST['App__loginedMember'];
                 </div>
             </h1>
         </section>
+        <?php } ?>
