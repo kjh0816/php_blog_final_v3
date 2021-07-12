@@ -33,18 +33,21 @@ class ArticleRepository
         return DB__getRow($sql);
     }
 
-    public function writeArticle(int $memberId, string $title, string $body): int
+    public function writeArticle(int $memberId, int $boardId, string $title, string $body): int
     {
-        $sql = DB__secSql();
-        $sql->add("INSERT INTO article");
-        $sql->add("SET regDate = NOW()");
-        $sql->add(", updateDate = NOW()");
-        $sql->add(", memberId = ?", $memberId);
-        $sql->add(", title = ?", $title);
-        $sql->add(", `body` = ?", $body);
-        $id = DB__insert($sql);
-
-        return $id;
+      $sql = DB__secSql();
+      $sql->add("INSERT INTO article");
+      $sql->add("SET regDate = NOW()");
+      $sql->add(", updateDate = NOW()");
+      $sql->add(", memberId = ?", $memberId);
+      $sql->add(", boardId = ?", $boardId);
+      $sql->add(", liked = 0");
+      $sql->add(", count = 0");
+      $sql->add(", title = ?", $title);
+      $sql->add(", `body` = ?", $body);
+      $id = DB__insert($sql);
+  
+      return $id;
     }
 
     public function modifyArticle(int $id, string $title, string $body)

@@ -25,9 +25,9 @@ class ArticleService
         return $this->articleRepository()->getForPrintArticleById($id);
     }
 
-    public function writeArticle(int $memberId, string $title, string $body): int
+    public function writeArticle(int $memberId, int $boardId, string $title, string $body): int
     {
-        return $this->articleRepository()->writeArticle($memberId, $title, $body);
+        return $this->articleRepository()->writeArticle($memberId, $boardId, $title, $body);
     }
 
     public function modifyArticle(int $id, string $title, string $body)

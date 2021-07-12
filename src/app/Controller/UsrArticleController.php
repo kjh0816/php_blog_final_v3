@@ -84,6 +84,7 @@ class UsrArticleController extends Controller
     {
         $title = getStrValueOr($_REQUEST['title'], "");
         $body = getStrValueOr($_REQUEST['body'], "");
+        $boardId = getIntValueOr($_REQUEST['boardId'], 0);
 
         if (!$title) {
             jsHistoryBackExit("제목을 입력해주세요.");
@@ -93,7 +94,12 @@ class UsrArticleController extends Controller
             jsHistoryBackExit("내용을 입력해주세요.");
         }
 
-        $id = $this->articleService()->writeArticle($_REQUEST['App__loginedMemberId'], $title, $body);
+        $loginedMemberId = getIntValueOr($_REQUEST['App__loginedMemberId'], 0);
+        
+        
+        
+        
+        $id = $this->articleService()->writeArticle($loginedMemberId, $boardId, $title, $body);
 
         jsLocationReplaceExit("detail?id=${id}", "${id}번 게시물이 생성되었습니다.");
     }
