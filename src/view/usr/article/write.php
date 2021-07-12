@@ -41,6 +41,21 @@ $pageTitle = "게시물 작성";
       <form action="doWrite" method="POST" onsubmit="ArticleDoWrite__submitForm(this); return false;">
         <input type="hidden" name="body">
         <div>
+        <span>게시판 선택
+        <select required name="boardId">
+        <?php foreach($boards as $board){?>
+        <?php if($memberId == 1){?>
+        <option value="<?=$board['id']?>"><?=$board['name']?></option>
+        <?php }else{ ?>
+        <?php if($board['id'] != 1){?>
+        <option value="<?=$board['id']?>"><?=$board['name']?></option>
+
+        <?php }}?>
+        <?php }?>
+        </select>
+        </span>
+        </div>
+        <div>
           <span>제목</span>
           <input placeholder="제목을 입력해주세요." type="text" name="title"> 
         </div>

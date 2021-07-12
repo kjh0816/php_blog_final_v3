@@ -48,7 +48,7 @@ $loginedMember = $_REQUEST['App__loginedMember'];
 </head>
 <body>
 <div class="site-wrap min-h-screen flex flex-col pt-10">
-    <header class="top-bar fixed top-0 inset-x-0 bg-purple-300 text-white h-10">
+    <header class="top-bar fixed top-0 inset-x-0 bg-purple-300 text-white h-10 z-50">
         <div class="container mx-auto h-full flex">
             <a href="/" class="top-bar__logo px-5 flex items-center">
                 <img class="w-12 h-12 mt-1 -mr-1" src="/../../../resource/img/logo/logo_meta.png" alt="">

@@ -11,6 +11,12 @@ class UsrArticleController extends Controller
 
     public function actionShowWrite()
     {
+
+         // 사용자가 선택할 수 있는 board 리스트 호출(관리자가 아니면 1번(공지) 게시판에 글 쓸 수 없음.)
+        
+        $boards = $this->articleService()->getForPrintBoards();
+
+
         require_once $this->getViewPath("usr/article/write");
     }
 
