@@ -22,8 +22,9 @@ $utterancPageIdentifier = "/usr/article/detail?id={$article['id']}";
     <a href="modify?id=<?=$article['id']?>" class="btn btn-link">수정</a>
     <a class="btn btn-link" onclick="if ( confirm('정말 삭제 하시겠습니까?') == false ) return false;" href="doDelete?id=<?=$article['id']?>">삭제</a>
   </div>
+  
 </section>
-
+<hr class="ml-4">
 <section class="section-article-menu">
   <div class="container mx-auto ml-4">
 

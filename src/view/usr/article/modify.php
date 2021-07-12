@@ -8,10 +8,12 @@ $pageTitle = "게시물 수정, ${id}번 게시물";
 <section class="secion-article-write">
   <div class="container mx-auto">
     <div class="con-pad">
-      <div>
-        <a href="list">글 리스트</a>
-        <a href="detail?id=<?=$id?>">원문</a>
-      </div>
+      <section class="section-article-menu flex mt-2">
+        <div class="container mx-auto flex">
+          <a href="list" class="btn btn-link">글 리스트</a>
+          <a href="detail?id=<?=$id?>" class="btn btn-link">원문</a>
+        </div>
+      </section>
       <hr>
       <script>
       let ArticleDoModify__submitFormDone = false;
@@ -44,18 +46,21 @@ $pageTitle = "게시물 수정, ${id}번 게시물";
       }
       </script>
       <form action="doModify" method="POST" onsubmit="ArticleDoModify__submitForm(this); return false;">
+      <div class="container mx-auto">
       <input type="hidden" name="id" value="<?=$article['id']?>"> 
       <input type="hidden" name="body"> 
-      <div>
-          <span>번호</span>
+      <div class="mt-4">
+          <span class="badge badge-primary badge-outline">번호</span>
           <span><?=$article['id']?></span>
         </div>
-        <div>
-          <span>제목</span>
-          <input required placeholder="제목을 입력해주세요." type="text" name="title" value="<?=$article['title']?>"> 
+        <div class="form-control my-4 -ml-1">
+        <label class="label">
+          <span class="label-text badge badge-primary badge-outline">제목</span>
+        </label> 
+        <input type="text" placeholder="제목을 입력해주세요." name="title" class="input input-bordered" value="<?=$article['title']?>">
         </div>
         <div>
-          <span>내용</span>
+          <span class="badge badge-primary badge-outline">내용</span>
           
           <script type="text/x-template"><?=ToastUiEditor__getSafeSource($article['body'])?></script>
           <div class="toast-ui-editor input-body"></div>
@@ -63,6 +68,7 @@ $pageTitle = "게시물 수정, ${id}번 게시물";
         <div>
         <input type="submit" value="수정 완료"class="btn btn-outline btn-secondary mt-2"></input>
         </div>
+    </div>
       </form>
     </div>
   </div>

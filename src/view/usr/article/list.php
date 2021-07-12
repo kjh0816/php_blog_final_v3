@@ -10,13 +10,13 @@ $pageTitleIcon = '<i class="fas fa-list"></i>';
   <div class="container mx-auto">
   <form action="list" method="POST">
   <div>
-<span>
-검색어: 
+<span class="badge badge-primary badge-outline">
+검색어
+</span> 
 <input placeholder="검색 내용을 적어주세요." type="search" name="searchKeyword" class="text-center badge badge-outline">
-</span>
 </div>
 <div class="">
-<span class="mr-4">카테고리> </span>
+<span class="mr-4 badge badge-primary badge-outline">카테고리 </span>
 <select class="article-list-choose-board btn-outline btn-primary" name="boardId">
 <option value="0" class="text-pink-500">카테고리 선택</option>
 <?php foreach($boards as $board){?>
@@ -38,13 +38,18 @@ $pageTitleIcon = '<i class="fas fa-list"></i>';
 <!-- 사용자가 게시판 선택 (끝) -->
 
 <?php if ( $isLogined ) { ?>
+  
 
-<section class="section-article-menu">
+<section class="section-article-menu mx-4">
+  <hr>
   <div class="container mx-auto">
-    <a href="write" class="btn btn-link">글 작성</a>
+    <a href="write" class="btn btn-link">
+    <i class="fas fa-pen mr-2"> 글 작성</i>
+    </a>
   </div>
+  <hr>
 </section>
-<hr>
+
 
 <?php } ?>
 
@@ -68,11 +73,11 @@ $pageTitleIcon = '<i class="fas fa-list"></i>';
             ?>
             <div>
               <div class="badge badge-primary badge-outline">번호</div>
-              <a href="<?=$detailUri?>"><?=$article['id']?></a>
+              <a class="hover:underline" href="<?=$detailUri?>"><?=$article['id']?></a>
             </div>
             <div class="mt-2">
               <div class="badge badge-primary badge-outline">제목</div>
-              <a href="<?=$detailUri?>"><?=$article['title']?></a>
+              <a class="hover:underline" href="<?=$detailUri?>"><?=$article['title']?></a>
             </div>
             <div class="mt-2">
               <div class="badge badge-primary badge-outline">작성자</div>
