@@ -25,7 +25,7 @@ if ( !isset($meta['og:title']) ) {
 
 $meta['siteDomain'] = $prodSiteDomain;
 $meta['siteMainUrl'] = "https://{$prodSiteDomain}";
-$meta['siteMetaImgUrl'] = "/resource/img/logo/logo_meta.png";
+$meta['siteMetaImgUrl'] = "/resource/img/logo/logo_meta_2.png";
   
 ?>
 <link href="<?=$meta['siteMetaImgUrl']?>" rel="shortcut icon" type="image/x-icon">

@@ -8,22 +8,22 @@ $pageTitleIcon = '<i class="fas fa-list"></i>';
 <!-- 사용자가 게시판 선택 (시작) -->
 <section class="section-article-menu mt-5 ml-10">
   <div class="container mx-auto">
-  <form action="list" method="POST">
-  <div>
-<span class="badge badge-primary badge-outline">
-검색어
-</span> 
-<input placeholder="검색 내용을 적어주세요." type="search" name="searchKeyword" class="text-center badge badge-outline">
-</div>
-<div class="">
-<span class="mr-4 badge badge-primary badge-outline">카테고리 </span>
+  <span class="mr-4 badge badge-primary badge-outline">카테고리 </span>
 <select class="article-list-choose-board btn-outline btn-primary" name="boardId">
 <option value="0" class="text-pink-500">카테고리 선택</option>
 <?php foreach($boards as $board){?>
     <option value="<?=$board['id']?>"><?=$board['name']?></option>
 <?php }?>
 </select>
-<input type="submit" value="검색" class="ml-4 btn btn-outline btn-primary">
+  <form action="list" method="POST" class="flex mt-3">
+  <div>
+<span class="badge badge-primary badge-outline">
+검색어
+</span> 
+  <input type="text" placeholder="검색어를 입력해주세요." type="search" name="searchKeyword" class="input input-primary input-bordered ml-3">
+</div>
+<div class="">
+<input type="submit" value="검색" class="ml-2 btn btn-outline btn-primary ">
 </div>
 </form>
   </div>
