@@ -7,26 +7,24 @@ $pageTitleIcon = '<i class="fas fa-list"></i>';
 
 <!-- 사용자가 게시판 선택 (시작) -->
 <section class="section-article-menu mt-5 ml-10">
-<div class="container mx-auto">
-<span class="mr-4 badge badge-primary badge-outline">카테고리 </span>
-<select class="article-list-choose-board btn-outline btn-primary" name="boardId">
-<option value="0" class="text-pink-500">카테고리 선택</option>
-<?php foreach($boards as $board){?>
-  <option value="<?=$board['id']?>"><?=$board['name']?></option>
-<?php }?>
-</select>
-<form action="list" method="POST" class="flex mt-3">
-<div>
-<span class="badge badge-primary badge-outline">
-검색어
-</span> 
-<input type="text" placeholder="검색어를 입력해주세요." type="search" name="searchKeyword" class="input input-primary input-bordered ml-3">
-</div>
-<div class="">
-<input type="submit" value="검색" class="ml-2 btn btn-outline btn-primary ">
-</div>
-</form>
-</div>
+  <div class="container mx-auto">
+
+    <form action="list" method="POST" class="flex flex-col mt-3">
+      <div class="flex">
+        <select class="select select-bordered select-secondary w-full max-w-xs" name="boardId">
+          <option value="0" class="text-pink-500 w-full">전체 카테고리</option>
+          <?php foreach($boards as $board){?>
+            <option value="<?=$board['id']?>"><?=$board['name']?></option>
+          <?php }?>
+        </select>
+      </div>
+    <div class="flex">
+      <input type="text" placeholder="검색어를 입력해주세요." type="search" name="searchKeyword" class="input input-primary input-bordered">
+      <input type="submit" value="검색" class="rounded-l-none btn btn-primary">
+    </div>
+    </form>
+
+  </div>
 </section>
 
 
