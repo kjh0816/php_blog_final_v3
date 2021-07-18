@@ -27,8 +27,8 @@ $utterancPageIdentifier = "/usr/article/detail?id={$article['id']}";
 
 <section class="section-article-menu">
 <div class="container mx-auto">
-<hr class="ml-4">
-<div class="py-5">
+<hr class="mx-4 mb-4">
+<div class="py-5 con-pad">
           <?php
           $detailUri = "detail?id=${article['id']}";
           $body = ToastUiEditor__getSafeSource($article['body']);
