@@ -60,7 +60,7 @@ class UsrMemberController extends Controller
 
         $_SESSION['loginedMemberId'] = $member['id'];
 
-        jsLocationReplaceExit("../article/list", "{$member['nickname']}님 환영합니다.");
+        jsLocationReplaceExit("../article/list", "ㅎㅇ");
     }
     public function actionShowAboutMe()
     {

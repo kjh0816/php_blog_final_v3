@@ -53,7 +53,8 @@ class UsrArticleController extends Controller
 
         $this->articleService()->modifyArticle($id, $boardId, $title, $body);
 
-        jsLocationReplaceExit("detail?id=${id}", "${id}번 게시물이 수정되었습니다.");
+        
+        require_once $this->getViewPath("usr/article/detail?id=${id}");
     }
 
     public function actionDoDelete()
@@ -102,7 +103,8 @@ class UsrArticleController extends Controller
         
         $id = $this->articleService()->writeArticle($loginedMemberId, $boardId, $title, $body);
 
-        jsLocationReplaceExit("detail?id=${id}", "${id}번 게시물이 생성되었습니다.");
+        
+        require_once $this->getViewPath("usr/article/detail?id=${id}");
     }
 
     public function actionShowList()
