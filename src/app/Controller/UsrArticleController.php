@@ -54,7 +54,8 @@ class UsrArticleController extends Controller
         $this->articleService()->modifyArticle($id, $boardId, $title, $body);
 
         
-        require_once $this->getViewPath("usr/article/detail?id=${id}");
+        
+        jsLocationReplaceExit("detail?id=${id}");
     }
 
     public function actionDoDelete()
@@ -104,7 +105,7 @@ class UsrArticleController extends Controller
         $id = $this->articleService()->writeArticle($loginedMemberId, $boardId, $title, $body);
 
         
-        require_once $this->getViewPath("usr/article/detail?id=${id}");
+        jsLocationReplaceExit("detail?id=${id}");
     }
 
     public function actionShowList()

@@ -11,8 +11,10 @@ class UsrMemberController extends Controller
     use Container;
 
     public function actionShowJoin()
-    {
-        require_once $this->getViewPath("usr/member/join");
+    {   
+
+        jsLocationReplaceExit("../article/list", "회원가입 불가");
+        // require_once $this->getViewPath("usr/member/join");
     }
 
     public function actionShowLogin()
